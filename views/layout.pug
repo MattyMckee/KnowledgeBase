@@ -9,19 +9,18 @@ html
     nav.navbar.navbar-expand-lg.navbar-dark.bg-dark
       button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarTogglerDemo03', aria-controls='navbarTogglerDemo03', aria-expanded='false', aria-label='Toggle navigation')
         span.navbar-toggler-icon
-      a.navbar-brand(href='#') Knowledgebase
+      a.navbar-brand(href='/') Knowledgebase
       #navbarTogglerDemo03.collapse.navbar-collapse
         ul.navbar-nav.mr-auto.mt-2.mt-lg-0
           li.nav-item.active
-            a.nav-link(href='#')
+            a.nav-link(href='/')
               | Home 
               span.sr-only (current)
           li.nav-item
-            a.nav-link(href='#') Link
-
-
-
+            a.nav-link(href='/articles/add') Add Article
+    
     .container
+      != messages('message', locals)
       block content
       br
       hr
