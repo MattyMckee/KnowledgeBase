@@ -13,6 +13,7 @@ const app = express();
 
 //bring in models
 let Article = require('./models/article');
+let User = require('./models/user');
 
 //connect to db
 mongoose.connect('mongodb://localhost/nodekb');
@@ -76,7 +77,10 @@ app.get('/', function(req,res){
 
 //Route files
 let articles = require('./routes/articles');
+let users = require('./routes/users');
+
 app.use('/articles', articles);
+app.use('/users', users);
 
 //start server
 app.listen(3000, function(){
